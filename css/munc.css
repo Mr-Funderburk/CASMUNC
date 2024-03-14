@@ -6,6 +6,11 @@ body {
     font-style: normal;
     font-family: "Open Sans", Helvetica, Verdana, sans-serif;
     color: #000;
+    background-image: url("../img/canterbury_fort_myers_upper_school_entrance.jpg");
+    background-position: top center;
+    background-size: 200%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -110,6 +115,7 @@ nav a:link, nav a:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 20px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover, nav a:focus {
@@ -118,10 +124,6 @@ nav a:hover, nav a:focus {
 
 
 .headerImage {
-    background-image: url(../img/canterbury_fort_myers_upper_school_entrance.jpg);
-    background-size: 150%;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 100%;
     height: 200px;
     position: relative;
@@ -156,9 +158,23 @@ nav a:hover, nav a:focus {
     letter-spacing: 1px;
 }
 
+#map {
+    margin: 20px 0;
+    width: 100%;
+    height: 400px;
+}
+
+#map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.message {
+    border-left: 8px solid hsl(202.86, 98.13%, 20.98%);
+}
 
 h3 {
-    margin: 12px 10px;
+    padding: 12px 10px;
     font-family: "EB Garamond", Garamond, Georgia, "Times New Roman", serif;
     font-weight: 800;
     font-size: 1.4rem;
@@ -167,8 +183,9 @@ h3 {
     letter-spacing: 1px;
 }
 
+.content { background-color: #fff; }
 .content p {
-    margin: 6px 16px;
+    padding: 6px 16px;
 }
 
 .content p span.note {
@@ -176,10 +193,20 @@ h3 {
     color: #666;
 }
 
+.signature {
+    font-family: Whisper, cursive;
+    font-size: 2.5rem;
+}
+
 footer {
     background-color: hsl(202.86, 98.13%, 20.98%);
-    margin-top: 50px;
     padding: 12px 0;
+}
+
+.footerSpacer {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
 }
 
 footer h3 { color: #fff; }
@@ -220,11 +247,14 @@ footer .nav {
 }
 
 footer .copyright {
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
     color: #aaa;
     text-align: center;
     margin: 10px;
+    margin-top: 30px;
 }
+
+footer .copyright p { margin: 6px 0; }
 
 @media screen and (max-width: 999px) {
     header #navToggle:not(:checked) ~ nav { left: -100vw; }
@@ -234,6 +264,14 @@ footer .copyright {
     header #navToggle:checked ~ .navButton label span { border-top: 2px solid #fff; }
 }
 
+@media screen and (min-width: 800px) {
+    body { background-size: cover; }
+    .headerImage { height: 400px; }
+    .sideBy2 {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
 
 @media screen and (min-width: 1000px) {
     .navButton { display: none; }
@@ -266,5 +304,33 @@ footer .copyright {
 
     .headerImage {
         height: calc(100vh - 100px);
+    }
+
+    .sideBy2 {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .content p, .content h3 { padding: 12px 24px; }
+    .message { border-left-width: 10px; }
+
+    footer {
+        background-color: hsl(202.86, 98.13%, 20.98%);
+        padding: 12px 0;
+    }
+    
+    footer .contact img { width: 300px; }
+    footer .contact { margin-bottom: 30px; }
+    footer .contact p {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    footer .contact p span {
+        font-size: 1.1rem;
+        font-weight: 200;
+        color: #ccc;
     }
 }
